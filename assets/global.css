@@ -3,6 +3,7 @@
 :root{
   --font-body-family: "Jost", system-ui;
   --font-heading-family: "Lustria", system-ui;
+  --theme-color-1: #FFF544;
 }
 
 body{
@@ -21,4 +22,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.btn-theme{
+  background-color: var(--theme-color-1);
 }
