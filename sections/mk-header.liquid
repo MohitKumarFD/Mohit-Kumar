@@ -1,6 +1,74 @@
+<div class="main-header shopify-{{ section.id }}-wrap">
+  <div class="container">
+    <div class="header-wrap">
+      <div class="logo-wrap">
+        <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+          {%- if settings.logo != blank -%}
+            <div class="header__heading-logo-wrapper">
+              {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+              {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+              {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+              {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+              {{ settings.logo | image_url: width: 600 | image_tag:
+                class: 'header__heading-logo motion-reduce',
+                widths: widths,
+                height: logo_height,
+                width: settings.logo_width,
+                alt: logo_alt,
+                sizes: sizes,
+                preload: true
+              }}
+            </div>
+          {%- else -%}
+            <span class="h2">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+      </div>
+      
+      {% if section.settings.header_text != blank %}
+      <div class="header-text">
+        <span class="site-description">{{ section.settings.header_text }}</span>
+      </div>
+      {% endif %}
+
+      {% if section.settings.button_text != blank %}
+      <div class="header-cta">
+        <a href="{{ section.settings.button_link }}" class="btn btn-theme btn-arrow">{{ section.settings.button_text }}</a>
+      </div>
+      {% endif %}
+      
+    </div>
+  </div>
+</div>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Theme Header",
+    "class": "theme-main-header",
+    "tag": "header",
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "header_text",
+        "label": "Header Text",
+        "default": "Find the ideal gift for your loved ones."
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "choose gift"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Url"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
+      }
+  ]
   }
 {% endschema %}
