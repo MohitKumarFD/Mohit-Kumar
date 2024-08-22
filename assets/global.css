@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lustria&display=swap');
+
+:root{
+  --font-body-family: "Jost", system-ui;
+  --font-heading-family: "Lustria", system-ui;
+}
+
+body{
+  font-family: var(--font-body-family);
+  font-optical-sizing: auto;
+  font-style: normal;
+}
