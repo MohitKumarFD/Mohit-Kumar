@@ -49,6 +49,6 @@ body{
 
 .btn-theme:hover{
   color: #ffffff;
-  box-shadow: inset 400px 0px 0px 0px var(--theme-color-2);
+  box-shadow: inset 300px 0px 0px 0px var(--theme-color-2);
   background-color: var(--theme-color-2);
 }
