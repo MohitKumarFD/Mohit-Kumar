@@ -33,7 +33,7 @@
 
       {% if section.settings.button_text != blank %}
       <div class="header-cta">
-        <a href="{{ section.settings.button_link }}" class="btn btn-theme btn-arrow">{{ section.settings.button_text }}</a>
+        <a href="{{ section.settings.button_link }}" class="btn btn-theme btn-arrow">{{ section.settings.button_text }} {% render 'button-arrow' %}</a>
       </div>
       {% endif %}
       
