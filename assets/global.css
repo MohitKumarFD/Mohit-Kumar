@@ -42,13 +42,13 @@ body{
 
 .btn-theme{
   color: var(--theme-color-2);
-  box-shadow: inset 0px 0px 0px 0px;
+  box-shadow: inset 0px 0px 0px 0px var(--theme-color-2);
   background-color: var(--theme-color-1);
   transition: 0.5s ease;
 }
 
 .btn-theme:hover{
   color: #ffffff;
-  box-shadow: inset 200px 0px 0px 0px var(--theme-color-2);
+  box-shadow: inset 400px 0px 0px 0px;
   background-color: var(--theme-color-2);
 }
