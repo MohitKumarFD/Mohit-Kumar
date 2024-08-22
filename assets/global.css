@@ -11,6 +11,7 @@ body{
   font-optical-sizing: auto;
   font-style: normal;
   letter-spacing: 0px;
+  text-decoration: none;
 }
 
 /* Theme Header */
@@ -28,6 +29,7 @@ body{
   text-transform: uppercase;
   padding: 11px 22px 11px 41px;
   display: inline-flex;
+  column-gap: 18px;
 }
 
 .btn-theme{
