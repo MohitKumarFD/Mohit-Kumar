@@ -24,6 +24,11 @@ body{
     justify-content: space-between;
 }
 
+.btn{
+  text-transform: uppercase;
+}
+
 .btn-theme{
+  color: #000000;
   background-color: var(--theme-color-1);
 }
