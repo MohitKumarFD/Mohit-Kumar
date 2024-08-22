@@ -16,6 +16,19 @@ body{
   text-decoration: none;
 }
 
+/* Utility Classes */
+.bg-layer img{
+    width: 100%;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.object-fit-cover{
+    object-fit: cover;
+}
+
 /* Theme Header */
 .main-header{
   background-color: #F5F5F5;
@@ -27,6 +40,8 @@ body{
     justify-content: space-between;
     padding: 10px 0px;
 }
+
+/* Buttons */
 
 .btn{
   text-transform: uppercase;
@@ -68,3 +83,34 @@ body{
   box-shadow: inset 300px 0px 0px 0px var(--theme-color-1);
   background-color: var(--theme-color-1);
 }
+
+/* Titles */
+
+.title-lg {
+    font-size: 70px;
+    line-height: 70px;
+    font-weight: 500;
+    font-family: var(--font-body-family);
+    letter-spacing: 0px;
+    margin: 0px;
+}
+
+/* Theme Banner */
+
+.theme-banner {
+    position: relative;
+}
+
+.theme-banner .theme-banner-content {
+    position: absolute;
+    z-index: 1;
+    bottom:  0px;
+    width: 100%;
+}
+
+.theme-banner-content .text-container {
+    width: 40%;
+    padding-bottom: 50px;
+    padding-right: 24px;
+}
+
