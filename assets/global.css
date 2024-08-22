@@ -26,6 +26,7 @@ body{
 
 .btn{
   text-transform: uppercase;
+  padding: 11px 22px 11px 41px;
 }
 
 .btn-theme{
