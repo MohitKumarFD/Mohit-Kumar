@@ -16,6 +16,14 @@ body{
   text-decoration: none;
 }
 
+/* Dawn Overwritten Classes */
+@media screen and (min-width: 750px){
+    .page-width {
+        padding: 0 50px;
+        max-width: 100%;
+    }
+}
+
 /* Utility Classes */
 .bg-layer img{
     width: 100%;
