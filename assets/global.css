@@ -30,6 +30,7 @@ body{
   padding: 11px 22px 11px 41px;
   display: inline-flex;
   column-gap: 18px;
+  text-decoration: none;
 }
 
 .btn-theme{
