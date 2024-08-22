@@ -1,4 +1,17 @@
 <div class="theme-banner">
+  <div class="bg-layer">
+    {{
+        section.settings.image
+        | image_url: width: 3840
+        | image_tag:
+          width: section.settings.image.width,
+          height: section.settings.image.height,
+          class: "object-fit-cover",
+          sizes: '100vw',
+          widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+          fetchpriority: "high"
+      }}
+  </div>
 </div>
 
 {% schema %}
@@ -6,6 +19,17 @@
     "name": "Theme Banner",
     "tag": "section",
     "class": "theme-banner-section",
-    "settings": []
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Banner Image",
+      }
+    ],
+    "presets": [
+      {
+        "name": "Theme Banner"
+      }
+    ]
   }
 {% endschema %}
