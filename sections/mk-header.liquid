@@ -25,17 +25,19 @@
         </a>
       </div>
       
-      {% if section.settings.header_text != blank %}
-      <div class="header-text">
-        <span class="site-description">{{ section.settings.header_text }}</span>
+      <div class="collapse-wrap">
+        {% if section.settings.header_text != blank %}
+        <div class="header-text">
+          <span class="site-description">{{ section.settings.header_text }}</span>
+        </div>
+        {% endif %}
+  
+        {% if section.settings.button_text != blank %}
+        <div class="header-cta">
+          <a href="{{ section.settings.button_link }}" class="btn btn-theme btn-arrow">{{ section.settings.button_text }}</a>
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
-
-      {% if section.settings.button_text != blank %}
-      <div class="header-cta">
-        <a href="{{ section.settings.button_link }}" class="btn btn-theme btn-arrow">{{ section.settings.button_text }}</a>
-      </div>
-      {% endif %}
       
     </div>
   </div>
