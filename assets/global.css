@@ -30,14 +30,18 @@ body{
 
 .btn{
   text-transform: uppercase;
-  padding: 11px 22px 11px 41px;
-  display: inline-flex;
+  padding: 11px 41px 11px 41px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-  column-gap: 18px;
   text-decoration: none;
   min-width: 207px;
+}
+
+.btn-arrow{
+  padding: 11px 22px 11px 41px;
+  display: inline-flex;
+  column-gap: 18px;
 }
 
 .btn-theme{
@@ -48,6 +52,19 @@ body{
 }
 
 .btn-theme:hover{
+  color: #ffffff;
+  box-shadow: inset 300px 0px 0px 0px var(--theme-color-2);
+  background-color: var(--theme-color-2);
+}
+
+.btn-theme-dark{
+  color: var(--theme-color-2);
+  box-shadow: inset 0px 0px 0px 0px var(--theme-color-2);
+  background-color: var(--theme-color-1);
+  transition: 0.5s ease;
+}
+
+.btn-theme-dark:hover{
   color: #ffffff;
   box-shadow: inset 300px 0px 0px 0px var(--theme-color-2);
   background-color: var(--theme-color-2);
