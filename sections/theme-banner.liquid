@@ -1,6 +1,7 @@
 <div class="theme-banner">
   <div class="bg-layer">
-    {{
+    {% if section.settings.image != blank %}
+      {{
         section.settings.image
         | image_url: width: 3840
         | image_tag:
@@ -11,6 +12,26 @@
           widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
           fetchpriority: "high"
       }}
+    {% else %}
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {% endif %}
+  </div>
+  <div class="theme-banner-content">
+    <div class="page-width">
+      <div class="text-container">
+        <div class="title-wrap">
+          <h1 class="title-lg">{{ section.settings.title }}</h1>
+        </div>
+        <div class="text-wrap">
+          <div class="rte editor">
+            {{ section.settings.description }}
+          </div>
+        </div>
+        <div class="btn-wrap">
+          <a href="{{ section.settings.button_link }}">{{ section.settings.button_text }} {% render 'button-arrow' %}</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -24,6 +45,29 @@
         "type": "image_picker",
         "id": "image",
         "label": "Banner Image",
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "The Gift Guide",
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description",
+        "default": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button label",
+        "default": "Shop Now"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button label"
       }
     ],
     "presets": [
