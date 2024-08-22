@@ -4,6 +4,8 @@
   --font-body-family: "Jost", system-ui;
   --font-heading-family: "Lustria", system-ui;
   --theme-color-1: #FFF544;
+  --theme-color-2: #000000;
+  --text-color: #000000;
 }
 
 body{
@@ -39,6 +41,14 @@ body{
 }
 
 .btn-theme{
-  color: #000000;
+  color: var(--theme-color-1);
+  box-shadow: inset 0px 0px 0px 0px;
   background-color: var(--theme-color-1);
+  transition: 0.3s ease;
+}
+
+.btn-theme:hover{
+  color: #ffffff;
+  box-shadow: inset 200px 0px 0px 0px;
+  background-color: var(--theme-color-2);
 }
