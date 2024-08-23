@@ -41,18 +41,25 @@
             <div class="modal-dialog">
               <div class="modal-body">
                 <button class="close-btn">{% render 'close-icon' %}</button>
-                <div class="product-info">
-                  <div class="img-wrap">
-                    {{ product_block.featured_media | image_url: width: 120, height: 140 | image_tag }}
+                <div class="product-info-wrap">
+                  <div class="product-info">
+                    <div class="img-wrap">
+                      {{ product_block.featured_media | image_url: width: 120, height: 140 | image_tag }}
+                    </div>
+                    <div class="info">
+                      <h3>{{ product_block.title }}</h3>
+                      <div class="price money">
+                        {{ product_block.price | money_with_currency }}
+                      </div>
+                      <div class="short-desc">
+                        {{ product_block.description | strip_html | truncatewords: 15 }}
+                      </div>
+                    </div>
                   </div>
-                  <div class="info">
-                    <h3>{{ product_block.title }}</h3>
-                    <div class="price money">
-                      {{ product_block.price | money_with_currency }}
-                    </div>
-                    <div class="short-desc">
-                      {{ product_block.description | strip_html | truncatewords: 15 }}
-                    </div>
+                  <div class="product-quickadd-options">
+                    {% for option in product_block.variant_option_with_values %}
+                      {{ option.name }}
+                    {% endfor %}
                   </div>
                 </div>
               </div>
