@@ -148,6 +148,10 @@ body{
     row-gap: 20px;
 }
 
+.product-grid-wrap .title-wrap {
+  margin-bottom: 30px;
+}
+
 .product-grid-item {
     background-color: #f5f5f5;
 }
