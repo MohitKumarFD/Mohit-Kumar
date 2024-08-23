@@ -48,7 +48,7 @@
                   <div class="info">
                     <h3>{{ product_block.title }}</h3>
                     <div class="price">
-                      {% render 'price', product: product_block %}
+                      {% render 'price', product: product_block, show_compare_at_price: false %}
                     </div>
                     <div class="short-desc">
                       {{ product_block.description | strip_html | truncatewords: 15 }}
