@@ -8,7 +8,7 @@
 
     <div class="product-grid-wrap">
       {% for block in section.blocks %}
-        <div class="product-grid-item">
+        <div class="product-grid-item" style="--posX: {{ block.settings.posX }}%; --posY: {{ block.settings.posY }}%;">
           <div class="product-block">
             <div class="product-img-wrap">
               {% assign product_block = block.settings.product %}
