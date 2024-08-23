@@ -9,9 +9,8 @@
     <div class="product-grid-wrap">
       {% for block in section.blocks %}
         <div class="product-grid-item">
-          {{ block.settings.product.title }}
-
-          <div class="product-img-wrap">
+          <div class="product-block">
+            <div class="product-img-wrap">
             {% assign product_block = block.settings.product %}
             <img
               srcset="
@@ -33,6 +32,7 @@
               width="{{ product_block.featured_media.width }}"
               height="{{ product_block.featured_media.height }}"
             >
+          </div>
           </div>
         </div>
       {% endfor %}
