@@ -22,6 +22,64 @@
     },
     "theme_product_grid_DmtdtU": {
       "type": "theme-product-grid",
+      "blocks": {
+        "product_b48GMP": {
+          "type": "product",
+          "settings": {
+            "product": "black-leather-bag",
+            "posX": 50,
+            "posY": 50
+          }
+        },
+        "product_yUPAij": {
+          "type": "product",
+          "settings": {
+            "product": "blue-silk-tuxedo",
+            "posX": 50,
+            "posY": 50
+          }
+        },
+        "product_J7ADfh": {
+          "type": "product",
+          "settings": {
+            "product": "chequered-red-shirt",
+            "posX": 50,
+            "posY": 50
+          }
+        },
+        "product_wyPmiQ": {
+          "type": "product",
+          "settings": {
+            "product": "classic-leather-jacket",
+            "posX": 50,
+            "posY": 50
+          }
+        },
+        "product_VUcAHL": {
+          "type": "product",
+          "settings": {
+            "product": "classic-varsity-top",
+            "posX": 50,
+            "posY": 50
+          }
+        },
+        "product_Mxgwyp": {
+          "type": "product",
+          "settings": {
+            "product": "dark-denim-top",
+            "posX": 50,
+            "posY": 50
+          }
+        }
+      },
+      "block_order": [
+        "product_b48GMP",
+        "product_yUPAij",
+        "product_J7ADfh",
+        "product_wyPmiQ",
+        "product_VUcAHL",
+        "product_Mxgwyp"
+      ],
       "settings": {
         "title": "Tisso vison in the wild"
       }
