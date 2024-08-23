@@ -59,6 +59,11 @@
                   <div class="product-quickadd-options">
                     {% for option in product_block.options_with_values %}
                       {{ option.name }}
+
+                      {% for value in option.values %}
+                        {{ value }}
+                      {% endfor %}
+                      
                     {% endfor %}
                   </div>
                 </div>
