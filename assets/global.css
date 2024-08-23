@@ -141,6 +141,10 @@ body{
 
 /* Product Grid Section*/
 
+.theme-product-grid-section {
+    padding: 50px 0px;
+}
+
 .theme-product-grid .title-wrap {
   margin-bottom: 30px;
   letter-spacing: 0px;
