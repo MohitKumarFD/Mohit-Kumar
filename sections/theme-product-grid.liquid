@@ -47,6 +47,9 @@
                   </div>
                   <div class="info">
                     <h3>{{ product_block.title }}</h3>
+                    <div class="price">
+                      {% render 'price', product: product_block %}
+                    </div>
                     <div class="short-desc">
                       {{ product_block.description | strip_html | truncatewords: 15 }}
                     </div>
