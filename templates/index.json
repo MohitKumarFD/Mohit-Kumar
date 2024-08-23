@@ -43,8 +43,8 @@
           "type": "product",
           "settings": {
             "product": "chequered-red-shirt",
-            "posX": 50,
-            "posY": 50
+            "posX": 60,
+            "posY": 20
           }
         },
         "product_wyPmiQ": {
