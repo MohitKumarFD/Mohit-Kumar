@@ -27,6 +27,7 @@ body{
 /* Utility Classes */
 .bg-layer img{
     width: 100%;
+    display: block;
 }
 
 .mb-50 {
@@ -105,7 +106,7 @@ body{
 
 /* Theme Banner */
 
-.theme-banner {
+.theme-banner-body {
     position: relative;
 }
 
@@ -120,5 +121,14 @@ body{
     width: 40%;
     padding-bottom: 50px;
     padding-right: 24px;
+}
+
+.theme-banner-footer{
+    background-color: #F5F5F5;
+}
+
+.theme-banner-footer .text-wrap {
+    text-align: center;
+    padding: 10px 0px;
 }
 
