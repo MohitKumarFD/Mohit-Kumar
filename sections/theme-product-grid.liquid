@@ -41,6 +41,11 @@
             <div class="modal-dialog">
               <div class="modal-body">
                 <button class="close-btn">{% render 'close-icon' %}</button>
+                <div class="product-info">
+                  <div class="img-wrap">
+                    {{ product_block.featured_media | image_url: width: 120 | image_tag }}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
