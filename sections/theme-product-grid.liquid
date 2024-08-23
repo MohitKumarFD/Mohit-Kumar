@@ -38,6 +38,11 @@
             </div>
           </div>
           <div class="theme-quickadd-modal modal" id="{{ section.id }}-{{ block.id }}-{{ product_block.id }}-modal">
+            <div class="modal-dialog">
+              <div class="modal-body">
+                <button class="close-btn">{% render 'close-icon' %}</button>
+              </div>
+            </div>
           </div>
         </div>
       {% endfor %}
