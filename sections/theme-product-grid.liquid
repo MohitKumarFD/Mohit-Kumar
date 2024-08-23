@@ -34,8 +34,10 @@
               >
             </div>
             <div class="overlay-layer">
-              <button class="mini-quick-add" data-quick-add="{{ section.id }}-{{ block.id }}-modal">{% render 'add-icon' %}</button>
+              <button class="mini-quick-add" data-quickadd-modal="{{ section.id }}-{{ block.id }}-{{ product_block.id }}-modal">{% render 'add-icon' %}</button>
             </div>
+          </div>
+          <div class="theme-quickadd-modal modal" id="{{ section.id }}-{{ block.id }}-{{ product_block.id }}-modal">
           </div>
         </div>
       {% endfor %}
