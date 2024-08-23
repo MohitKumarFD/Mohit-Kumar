@@ -1,6 +1,62 @@
+<div class="theme-product-grid">
+  
+</div>
+
 {% schema %}
   {
     "name": "Theme Product Grid",
-    "settings": []
+    "tag": "section",
+    "class": "theme-product-grid-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Tisso vison in the wild"
+      }
+    ],
+    "blocks": [
+      {
+      "type": "product",
+      "name": "t:sections.collage.blocks.product.name",
+      "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Select product"
+          },
+          {
+            "type": "header",
+            "content": "Button position"
+          },
+          {
+            "type": "range",
+            "label": "Position X",
+            "default": 50,
+            "id": "posX",
+            "unit": "%",
+            "max": 100,
+            "min": 0,
+            "step": 5
+          },
+          {
+            "type": "range",
+            "label": "Position Y",
+            "default": 50,
+            "id": "posY",
+            "unit": "%",
+            "max": 100,
+            "min": 0,
+            "step": 5
+          }
+        ]
+      },
+    ],
+    "presets": [
+      {
+        "name": "Theme Product Grid",
+        "blocks": []
+      }
+    ]
   }
 {% endschema %}
