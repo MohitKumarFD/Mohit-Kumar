@@ -20,26 +20,36 @@
     <div class="theme-banner-content">
       <div class="page-width">
         <div class="text-container">
+          {% if section.settings.title != blank %}
           <div class="title-wrap mb-50">
             <h1 class="title-lg">{{ section.settings.title }}</h1>
           </div>
+          {% endif %}
+
+          {% if section.settings.description != blank %}
           <div class="text-wrap mb-50">
             <div class="rte editor">
               {{ section.settings.description }}
             </div>
           </div>
+          {% endif %}
+
+          {% if section.settings.button_text != blank %}
           <div class="btn-wrap">
             <a class="btn btn-theme-dark btn-arrow" href="{{ section.settings.button_link }}">{{ section.settings.button_text }} {% render 'button-arrow' %}</a>
           </div>
+          {% endif %}
         </div>
       </div>
     </div>
   </div>
+  {% if section.settings.bottom_text != blank %}
   <div class="theme-banner-footer">
     <div class="text-wrap">
       {{ section.settings.bottom_text }}
     </div>
   </div>
+  {% endif %}
 </div>
 
 {% schema %}
