@@ -206,3 +206,72 @@ body{
     width: 8px;
     height: auto;
 }
+
+/* Theme Product Grid Modals */
+
+.theme-quickadd-modal {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    height: 100vh;
+    width: 100%;
+    z-index: 99;
+    background-color: rgba(0,0,0,0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-quickadd-modal .modal-dialog {
+    background: #FFFFFF;
+    width: 311px;
+    box-shadow: 0px 2px 4px 0px #00000033;
+    padding: 36px 20px 25px;
+    position: relative;
+}
+
+.modal-dialog .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.theme-quickadd-modal .img-wrap img{
+    display: block;
+}
+
+.theme-quickadd-modal .product-info {
+    display: flex;
+    column-gap: 8px;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.theme-quickadd-modal .product-info .info h3 {
+    font-family: var(--font-body-family);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19.2px;
+    margin: 0px 0px 10px 0px;
+}
+
+.theme-quickadd-modal .product-info .short-desc {
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    font-weight: 300;
+    line-height: 15.4px;
+}
+
+.theme-quickadd-modal .product-info .price {
+    font-family: var(--font-heading-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    margin-bottom: 12px;
+}
