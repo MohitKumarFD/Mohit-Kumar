@@ -1,36 +1,43 @@
 <div class="theme-banner">
-  <div class="bg-layer">
-    {% if section.settings.image != blank %}
-      {{
-        section.settings.image
-        | image_url: width: 3840
-        | image_tag:
-          width: section.settings.image.width,
-          height: section.settings.image.height,
-          class: "object-fit-cover",
-          sizes: '100vw',
-          widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
-          fetchpriority: "high"
-      }}
-    {% else %}
-      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-    {% endif %}
-  </div>
-  <div class="theme-banner-content">
-    <div class="page-width">
-      <div class="text-container">
-        <div class="title-wrap mb-5">
-          <h1 class="title-lg">{{ section.settings.title }}</h1>
-        </div>
-        <div class="text-wrap mb-5">
-          <div class="rte editor">
-            {{ section.settings.description }}
+  <div class="theme-banner-body">
+    <div class="bg-layer">
+      {% if section.settings.image != blank %}
+        {{
+          section.settings.image
+          | image_url: width: 3840
+          | image_tag:
+            width: section.settings.image.width,
+            height: section.settings.image.height,
+            class: "object-fit-cover",
+            sizes: '100vw',
+            widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+            fetchpriority: "high"
+        }}
+      {% else %}
+        {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    </div>
+    <div class="theme-banner-content">
+      <div class="page-width">
+        <div class="text-container">
+          <div class="title-wrap mb-50">
+            <h1 class="title-lg">{{ section.settings.title }}</h1>
+          </div>
+          <div class="text-wrap mb-50">
+            <div class="rte editor">
+              {{ section.settings.description }}
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <a class="btn btn-theme-dark btn-arrow" href="{{ section.settings.button_link }}">{{ section.settings.button_text }} {% render 'button-arrow' %}</a>
           </div>
         </div>
-        <div class="btn-wrap">
-          <a class="btn btn-theme-dark btn-arrow" href="{{ section.settings.button_link }}">{{ section.settings.button_text }} {% render 'button-arrow' %}</a>
-        </div>
       </div>
+    </div>
+  </div>
+  <div class="theme-banner-footer">
+    <div class="text-wrap">
+      {{ section.settings.bottom_text }}
     </div>
   </div>
 </div>
@@ -68,6 +75,12 @@
         "type": "url",
         "id": "button_link",
         "label": "Button label"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "bottom_text",
+        "label": "Bottom Text",
+        "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
       }
     ],
     "presets": [
