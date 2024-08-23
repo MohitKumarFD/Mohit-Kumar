@@ -104,6 +104,13 @@ body{
     margin: 0px;
 }
 
+.title-md{
+  font-family: var(--font-heading-family);
+  font-size: 36px;
+  font-weight: 400;
+  margin: 0px;
+}
+
 /* Theme Banner */
 
 .theme-banner-body {
