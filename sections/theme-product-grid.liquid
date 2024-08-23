@@ -5,6 +5,17 @@
       <h2 class="title">{{ section.settings.title }}</h2>
     </div>
     {% endif %}
+
+    <div class="product-grid-wrap">
+      {% for block in section.blocks %}
+        <div class="product-grid-item">
+        {% render 'card-product',
+          card_product: block.settings.product,
+        %}
+        </div>
+      {% endfor %}
+    </div>
+    
   </div>
 </div>
 
