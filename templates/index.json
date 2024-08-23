@@ -51,8 +51,8 @@
           "type": "product",
           "settings": {
             "product": "classic-leather-jacket",
-            "posX": 50,
-            "posY": 50
+            "posX": 70,
+            "posY": 15
           }
         },
         "product_VUcAHL": {
