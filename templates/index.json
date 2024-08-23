@@ -80,6 +80,9 @@
         "product_VUcAHL",
         "product_Mxgwyp"
       ],
+      "custom_css": [
+        ".theme-product-grid-section {padding-top: 90px; padding-bottom: 50px;}"
+      ],
       "settings": {
         "title": "Tisso vison in the wild"
       }
