@@ -67,8 +67,8 @@
           "type": "product",
           "settings": {
             "product": "dark-denim-top",
-            "posX": 50,
-            "posY": 50
+            "posX": 75,
+            "posY": 40
           }
         }
       },
