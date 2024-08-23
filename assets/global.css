@@ -139,17 +139,17 @@ body{
     padding: 10px 0px;
 }
 
-/* Product Grid */
+/* Product Grid Section*/
+
+.theme-product-grid .title-wrap {
+  margin-bottom: 30px;
+}
 
 .product-grid-wrap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     row-gap: 20px;
-}
-
-.theme-product-grid .title-wrap {
-  margin-bottom: 30px;
 }
 
 .product-grid-item {
