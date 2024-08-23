@@ -47,6 +47,9 @@
                   </div>
                   <div class="info">
                     <h3>{{ product_block.title }}</h3>
+                    <div class="short-desc">
+                      {{ product_block.description | strip_html | truncate: 50 }}
+                    </div>
                   </div>
                 </div>
               </div>
