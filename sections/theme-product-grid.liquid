@@ -48,7 +48,7 @@
                   <div class="info">
                     <h3>{{ product_block.title }}</h3>
                     <div class="short-desc">
-                      {{ product_block.description | strip_html | truncate: 50 }}
+                      {{ product_block.description | strip_html | truncatewords: 15 }}
                     </div>
                   </div>
                 </div>
