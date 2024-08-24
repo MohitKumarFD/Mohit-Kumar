@@ -225,6 +225,10 @@ body{
     display: none;
 }
 
+.theme-quickadd-modal.active{
+  display: none;
+}
+
 .theme-quickadd-modal .modal-dialog {
     background: #FFFFFF;
     width: 311px;
