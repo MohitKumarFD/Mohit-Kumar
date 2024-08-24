@@ -2,7 +2,7 @@ let productBlocks = document.querySelectorAll('.product-grid-item.have-modal')
 productBlocks.forEach((item)=>{
   let atcButton = item.querySelector('.mini-quick-add')
   atcButton.addEventListener('click',(e)=>{
-    let modalID = e.target.getAttribute('data-quickadd-modal');
+    let modalID = e.getAttribute('data-quickadd-modal');
     alert(modalID);
   })
 })
