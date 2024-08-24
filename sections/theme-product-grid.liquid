@@ -85,10 +85,12 @@
 </div>
 
 <script>
-  let addToCartForm = document.querySelector("[action='/custom/cart/add']");
-  console.log(addToCartForm);
-  addToCartForm.addEventListener('submit', (e)=>{
-    e.preventDefault();
+  let addToCartForm = document.querySelectorAll("[action='/custom/cart/add']");
+  // console.log(addToCartForm);
+  addToCartFormd.forEach('submit', (formItem)=>{
+    formItem.addEventListener('submit', (e)=>{
+      e.preventDefault();
+    })
   })
   // let formData = new FormData(addToCartForm);
   
