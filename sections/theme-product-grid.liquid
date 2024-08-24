@@ -63,8 +63,8 @@
                         <div class="option-name">{{ option.name }}</div>
                         <div class="{% if option.values.size > 2 %} select-group{% else %} select{% endif %}">
                         {% for value in option.values %}
-                          <input type="radio" name="{{ option.name }}" value="{{ value }}" class="option" />
-                          <label>{{ value }}</label>
+                          <input type="radio" name="options[{{ option.name }}]" value="{{ value }}" class="option" />
+                          <label for=option-{{ option.name }}-{{ forloop.index }}>{{ value }}</label>
                         {% endfor %}
                         </div>
                       {% endfor %}
