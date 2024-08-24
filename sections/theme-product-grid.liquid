@@ -57,7 +57,7 @@
                     </div>
                   </div>
                   <div class="product-quickadd-options">
-                    {% for option in product_block.options_with_values %}
+                    {% for option in product_block.options_with_values  %}
                       <div class="option-name">{{ option.name }}</div>
                       <div class="{% if option.values.size > 2 %} select-group{% else %} select{% endif %}">
                       {% for value in option.values %}
