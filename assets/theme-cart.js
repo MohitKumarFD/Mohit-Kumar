@@ -1,4 +1,4 @@
-let addToCartForm = document.querySelectorAll("[action='/custom/cart/add']");
+let addToCartForm = document.querySelectorAll("#custom-cart-add");
   // console.log(addToCartForm);
   addToCartForm.forEach((formItem)=>{
   let formData = new FormData(formItem);
