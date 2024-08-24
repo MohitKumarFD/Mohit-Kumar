@@ -9,7 +9,7 @@ productBlocks.forEach((item)=>{
 
   productModal.addEventListener('click', (e)=>{
     if(e.target.classList.contains('theme-quickadd-modal')){
-      e.classList.remove('active')
+      e.target.classList.remove('active')
     }
   })
 })
