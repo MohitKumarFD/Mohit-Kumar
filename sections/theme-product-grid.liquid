@@ -87,7 +87,7 @@
 <script>
   let addToCartForm = document.querySelectorAll("[action='/custom/cart/add']");
   // console.log(addToCartForm);
-  addToCartForm.forEach('submit', (formItem)=>{
+  addToCartForm.forEach((formItem)=>{
     formItem.addEventListener('submit', (e)=>{
       e.preventDefault();
     })
