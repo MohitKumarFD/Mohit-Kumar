@@ -1,9 +1,9 @@
 let productBlocks = document.querySelectorAll('.product-grid-item.have-modal')
 productBlocks.forEach((item)=>{
   const atcButton = item.querySelector('.mini-quick-add')
+  const productModal = item.querySelector('.theme-quickadd-modal')
   atcButton.addEventListener('click',(e)=>{
-    const modalID = e.target.getAttribute('data-quickadd-modal');
-    alert(modalID);
+    productModal.classList.add('active')
   })
 })
 
