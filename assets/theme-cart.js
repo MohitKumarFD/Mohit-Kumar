@@ -9,7 +9,7 @@ let addToCartForm = document.querySelectorAll("[action='/custom/cart/add']");
       body: formData
     })
     .then(response => {
-      // alert('Product Added in Cart');
+      alert('Product Added in Cart');
       return response.json();
     })
     .catch((error) => {
