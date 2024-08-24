@@ -219,14 +219,14 @@ body{
     width: 100%;
     z-index: 99;
     background-color: rgba(0,0,0,0.03);
-    display: flex;
+    
     align-items: center;
     justify-content: center;
     display: none;
 }
 
 .theme-quickadd-modal.active{
-  display: none;
+  display: flex;
 }
 
 .theme-quickadd-modal .modal-dialog {
