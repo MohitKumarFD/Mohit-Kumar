@@ -1,7 +1,7 @@
 let addToCartForm = document.querySelector('#theme-cart-add');
 let formData = new FormData(addToCartForm);
 
-addToCartForm.addEventListener('submit',(e)=>{
+addToCartForm.addEventListener('submit', function(e){
   e.preventDefault();
   fetch(window.Shopify.routes.root + 'cart/add.js', {
     method: 'POST',
