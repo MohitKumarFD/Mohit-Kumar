@@ -58,12 +58,13 @@
                   </div>
                   <div class="product-quickadd-options">
                     {% for option in product_block.options_with_values %}
-                      {{ option.name }}
-
+                      <div class="option-name">{{ option.name }}</div>
+                      <div class="{% if option.values.size > 2 %} select-group{% else %} select{% endif %}">
                       {% for value in option.values %}
-                        {{ value }}
+                        <input class="option" />
+                        <label>{{ value }}</label>
                       {% endfor %}
-                      
+                      </div>
                     {% endfor %}
                   </div>
                 </div>
