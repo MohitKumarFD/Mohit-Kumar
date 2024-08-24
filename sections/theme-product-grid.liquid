@@ -57,15 +57,20 @@
                     </div>
                   </div>
                   <div class="product-quickadd-options">
-                    {% for option in product_block.options_with_values  %}
-                      <div class="option-name">{{ option.name }}</div>
-                      <div class="{% if option.values.size > 2 %} select-group{% else %} select{% endif %}">
-                      {% for value in option.values %}
-                        <input type="radio" name="{{ option.name }}" value="{{ value }}" class="option" />
-                        <label>{{ value }}</label>
+                    <form>
+                      {% for option in product_block.options_with_values  %}
+                        <div class="option-name">{{ option.name }}</div>
+                        <div class="{% if option.values.size > 2 %} select-group{% else %} select{% endif %}">
+                        {% for value in option.values %}
+                          <input type="radio" name="{{ option.name }}" value="{{ value }}" class="option" />
+                          <label>{{ value }}</label>
+                        {% endfor %}
+                        </div>
                       {% endfor %}
+                      <div class="btn-wrap">
+                        <button type="submit" class="btn btn-theme btn-arrow">Add to cart {% render 'button-arrow' %}</button>
                       </div>
-                    {% endfor %}
+                    </form>
                   </div>
                 </div>
               </div>
