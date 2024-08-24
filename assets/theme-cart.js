@@ -1,4 +1,6 @@
-let addToCartForm = document.querySelectorAll("#custom-cart-add");
+let productBlocks = document.querySelectorAll('.product-grid-item.have-modal')
+
+let addToCartForm = document.querySelectorAll("form.custom-cart-add");
   // console.log(addToCartForm);
   addToCartForm.forEach((formItem)=>{
   let formData = new FormData(formItem);
