@@ -222,6 +222,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 
 .theme-quickadd-modal .modal-dialog {
