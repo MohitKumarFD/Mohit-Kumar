@@ -57,7 +57,7 @@
                     </div>
                   </div>
                   <div class="product-quickadd-options">
-                    <form id="custom-cart-add">
+                    <form class="custom-cart-add">
                       <input type="hidden" name="id" value="{{ product_block.selected_or_first_available_variant.id }}" />
                       {% for option in product_block.options_with_values  %}
                         <div class="option-name">{{ option.name }}</div>
