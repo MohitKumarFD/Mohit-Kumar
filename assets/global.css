@@ -365,7 +365,6 @@ body{
   height: 40px;
 }
 
-.fancy-select-group .select:before,
 .fancy-select-group .select:after{
   display: none;
 }
@@ -391,7 +390,7 @@ body{
 }
 
 .fancy-select-group .option:hover {
-  background:#666;
+  background:#000000;
 }
 
 .fancy-select-group .select:focus .option {
@@ -408,7 +407,7 @@ body{
 .fancy-select-group input:checked + label {
   order: 1;
   z-index:2;
-  background:#666;
+  background:#ffffff;
   border-top:none;
   position:relative;
 }
@@ -433,5 +432,5 @@ body{
   height: 40px;
   width: 40px;
   content: '';
-  background:#666;
+  background:#ffffff;
 }
