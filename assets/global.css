@@ -285,7 +285,7 @@ body{
     display: flex;
 }
 
-.select-group .fancy-input .input-value::before {
+.select-group .fancy-input label::before {
     content: '';
     display: inline-block;
     position: absolute;
@@ -297,7 +297,7 @@ body{
     border-right: 0.5px solid #000000;
 }
 
-.select-group .fancy-input .input-value{
+.select-group .fancy-input label{
     position: relative;
     padding: 11px 8px 11px 15px;
     width: 50%;
@@ -306,10 +306,10 @@ body{
     letter-spacing: -0.2px;
 }
 
-.select-group .fancy-input .input-value + .input-value {
+.select-group .fancy-input label + label {
     border-left: 0.5px solid #000000;
 }
 
-.select-group .fancy-input .input-value input.option {
+.select-group .fancy-input input.option {
     display: none;
 }
