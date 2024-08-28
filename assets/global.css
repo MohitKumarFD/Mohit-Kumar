@@ -334,3 +334,15 @@ body{
 .select-group .fancy-input {
     position: relative;
 }
+
+.select-group .fancy-input .glider{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(135px);
+}
+
+.select-group .fancy-input input:checked ~ .glider {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(calc(var(--mul) * 135px));
+}
