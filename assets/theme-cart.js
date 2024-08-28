@@ -19,6 +19,7 @@ productBlocks.forEach((item)=>{
   })
 })
 
+
 let addToCartForm = document.querySelectorAll("form.custom-cart-add");
   // console.log(addToCartForm);
   addToCartForm.forEach((formItem)=>{
