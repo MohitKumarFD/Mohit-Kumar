@@ -58,7 +58,7 @@
                     </div>
                   </div>
                   <div class="product-quickadd-options">
-                    <form id="form--{{ block.id }}__{{ forloop.index }}" method="post" action="/cart/add" class="custom-cart-add">
+                    <form id="form--{{ block.id }}__{{ forloop.index }}"  class="custom-cart-add">
                       <input type="hidden" id="variant-id" name="id" value="{{ product_block.selected_or_first_available_variant.id }}" />
                       {% for option in product_block.options_with_values  %}
                         <div class="option-name">{{ option.name }}</div>
