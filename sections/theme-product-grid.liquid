@@ -85,7 +85,7 @@
           let selectedOptions = [];
           
           {% for option in product_block.options_with_values %}
-            selectedOptions.push(document.querySelector("select[name='options[{{ option.name | handleize }}]']").value);
+            selectedOptions.push(document.querySelector("input[name='options[{{ option.name | handleize }}]']").value);
           {% endfor %}
           
           let matchingVariant = productVariants__{{forloop.index}}.find(function(variant) {
