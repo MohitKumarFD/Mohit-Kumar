@@ -108,6 +108,7 @@ body{
   font-family: var(--font-heading-family);
   font-size: 36px;
   font-weight: 400;
+  line-height: 43.2px
   margin: 0px;
 }
 
@@ -137,6 +138,8 @@ body{
 .theme-banner-footer .text-wrap {
     text-align: center;
     padding: 10px 0px;
+    font-size: 16px;
+    line-height: 13.42px;
 }
 
 /* Product Grid Section*/
