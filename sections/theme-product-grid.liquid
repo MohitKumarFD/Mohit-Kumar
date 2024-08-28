@@ -58,12 +58,12 @@
                   </div>
                   <div class="product-quickadd-options">
                     <form class="custom-cart-add">
-                      <!-- <input type="hidden" name="id" value="{{ product_block.selected_or_first_available_variant.id }}" /> -->
+                      <input type="hidden" id="variant-id" name="id" value="{{ product_block.selected_or_first_available_variant.id }}" />
                       {% for option in product_block.options_with_values  %}
                         <div class="option-name">{{ option.name }}</div>
                         <div class="{% if option.values.size > 2 %} select{% else %} select-group{% endif %}">
                         {% for value in option.values %}
-                          <input type="radio" name="options[{{ option.name }}]" id="option-{{ option.name }}-{{ forloop.index }}" value="{{ value }}" class="option" />
+                          <input type="radio" name="options[{{ option.name | handleize }}]" id="option-{{ option.name }}-{{ forloop.index }}" value="{{ value | handleize | escape }}" class="option" />
                           <label for="option-{{ option.name }}-{{ forloop.index }}">{{ value }}</label>
                         {% endfor %}
                         </div>
@@ -78,11 +78,31 @@
             </div>
           </div>
         </div>
+
+        <script>
+        var productVariants = {{ product_block.variants | json }};
+        function updateVariantId() {
+          var selectedOptions = [];
+          {% for option in product_block.options_with_values %}
+            selectedOptions.push(document.querySelector('select[name="options[{{ option.name | handleize }}]"]').value);
+          {% endfor %}
+          
+          var matchingVariant = productVariants.find(function(variant) {
+            return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions.join('-');
+          });
+          
+          if (matchingVariant) {
+            console.log(matchingVariant)
+            document.getElementById('variant-id').value = matchingVariant.id;
+          }
+        }
+      </script>
       {% endfor %}
     </div>
     
   </div>
 </div>
+
 
 <script src={{ 'theme-cart.js' | asset_url }} defer></script>
 
