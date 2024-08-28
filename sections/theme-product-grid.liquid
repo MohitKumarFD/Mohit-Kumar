@@ -57,7 +57,7 @@
                     </div>
                   </div>
                   <div class="product-quickadd-options">
-                    <form id="form--{{ block.id }}__{{ forloop.index }}" action="/cart/add" class="custom-cart-add">
+                    <form id="form--{{ block.id }}__{{ forloop.index }}" class="custom-cart-add">
                       <input type="hidden" id="variant-id" name="id" value="{{ product_block.selected_or_first_available_variant.id }}" />
                       {% for option in product_block.options_with_values  %}
                         <div class="option-name">{{ option.name }}</div>
@@ -98,6 +98,7 @@
           </div>
         </div>
 
+        {% comment %}
         <script>
           {% assign main_loop_index = forloop.index %}
           var productVariants_{{main_loop_index}} = {{ product_block.variants | json }};
@@ -124,6 +125,40 @@
             })
           })
         </script>
+        {% endcomment %}
+
+        <script>
+          {% assign main_loop_index = forloop.index %}
+  // Assuming each form has a unique index (main_loop_index)
+  var productVariantsForForm{{main_loop_index}} = {{ product_block.variants | json }};
+
+  function updateVariantId_{{ main_loop_index }}() {
+    var selectedOptions = [];
+    
+    {% for option in product_block.options_with_values %}
+      selectedOptions.push(document.querySelector("#form--{{ block.id }}__{{ main_loop_index }} input[name='options[{{ option.name | handleize }}]']").value);
+    {% endfor %}
+    
+    var matchingVariant = productVariantsForForm{{main_loop_index}}.find(function(variant) {
+      // Compare selected options directly with variant options
+      return variant.options.map(function(option) {
+        return option.toLowerCase().replace(/\s+/g, '-');
+      }).join('-') === selectedOptions.join('-');
+    });
+    
+    if (matchingVariant) {
+      console.log(matchingVariant);
+      document.querySelector('#form--{{ block.id }}__{{ main_loop_index }} #variant-id').value = matchingVariant.id;
+    }
+  }
+
+  document.querySelectorAll('#form--{{ block.id }}__{{ main_loop_index }} .product-input-wrap').forEach((input) => {
+    input.addEventListener('change', () => {
+      updateVariantId_{{ main_loop_index }}();
+    });
+  });
+</script>
+
       {% endfor %}
     </div>
     
