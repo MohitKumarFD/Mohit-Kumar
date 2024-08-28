@@ -482,6 +482,12 @@ body{
     margin-top: 11px;
 }
 
+@media screen and (min-width: 1079px){
+  .mobile-menu-content, .mobile-trigger{
+    display: none;
+  }
+}
+
 @media screen and (max-width: 990px){
   .theme-banner-body {
       display: grid;
