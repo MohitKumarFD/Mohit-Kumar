@@ -111,8 +111,8 @@
               selectedOptions.push(document.querySelector('.real-input[name="options[{{ option.name | handleize }}]"]').value);
             {% endfor %}
 
-            console.log(productVariants{{loopid}})
-            console.log(selectedOptions)
+            // console.log(productVariants{{loopid}})
+            // console.log(selectedOptions)
             
             const matchingVariant = productVariants{{loopid}}.find(function(variant) {
               return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions.join('-');
