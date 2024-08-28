@@ -33,7 +33,7 @@ let addToCartForm = document.querySelectorAll("form.custom-cart-add");
     .then(response => {
       alert('Product Added in Cart : redirecting to 3 seconds');
       window.setTimeout( function(){
-           window.location = window.Shopify.routes.root + '/cart;
+           window.location = window.Shopify.routes.root + '/cart';
        }, 100 );
       return response.json();
     })
