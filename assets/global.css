@@ -376,7 +376,9 @@ body{
   display:flex;
   align-items:center;
   background: #ffffff;
-  border-top: #222 solid 1px;
+  border-top: 0.5px solid #000000;
+  border-left: 0.5px solid #000000;
+  border-right: 0.5px solid #000000;
   position:absolute;
   top:0;
   width: 100%;
