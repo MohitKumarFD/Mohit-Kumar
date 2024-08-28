@@ -314,3 +314,18 @@ body{
 .select-group .fancy-input input.option {
     display: none;
 }
+
+.select-group .glider {
+    display: block !important;
+    width: 50%;
+    position: absolute;
+    background: #000000;
+    left: 0px;
+    height: 100%;
+    top: 0px;
+    z-index: 0;
+}
+
+.select-group .fancy-input {
+    position: relative;
+}
