@@ -66,7 +66,7 @@
                               
                             {% for value in option.values %}
                               
-                                <input type="radio" name="options[{{ option.name | handleize }}]" id="option-{{ option.name }}--{{ block.id }}" value="{{ value | handleize | escape }}" class="option" />
+                                <input type="radio" name="options[{{ option.name | handleize }}]" style="--mul: {{ forloop.index | minus: 1 }}" id="option-{{ option.name }}--{{ block.id }}" value="{{ value | handleize | escape }}" class="option" />
                                 <label style="--swatch-color: {{ value }}" for="option-{{ option.name }}--{{ block.id }}">{{ value }}</label>
                               
                             {% endfor %}
