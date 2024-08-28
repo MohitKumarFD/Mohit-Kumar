@@ -120,7 +120,7 @@
             
             if (matchingVariant) {
               console.log(matchingVariant)
-              document.getElementById('variant-id').value = matchingVariant.id;
+              document.querySelector('#form--{{ block.id }}__{{ forloop.index }} #variant-id').value = matchingVariant.id;
             }
           }
         </script>
