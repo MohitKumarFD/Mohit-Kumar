@@ -372,7 +372,7 @@ body{
 
 .fancy-select-group .option {
   padding:0 30px 0 10px;
-  min-height:40px;
+  height:40px;
   display:flex;
   align-items:center;
   background: #ffffff;
@@ -385,11 +385,12 @@ body{
   pointer-events:none;
   order: 2;
   z-index: 1;
-  transition:background .4s ease-in-out;
+  font-size: 16px;
+  line-height: 16px;
+  transition: background .3s ease-in-out;
   box-sizing: border-box;
   overflow:hidden;
   white-space:nowrap;
-  
 }
 
 .fancy-select-group .option:hover {
