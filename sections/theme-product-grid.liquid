@@ -80,14 +80,14 @@
         </div>
 
         <script>
-        var productVariants_{{forloop.index}} = {{ product_block.variants | json }};
+        let productVariants_{{forloop.index}} = {{ product_block.variants | json }};
         function updateVariantId() {
-          var selectedOptions = [];
+          let selectedOptions = [];
           {% for option in product_block.options_with_values %}
             selectedOptions.push(document.querySelector('select[name="options[{{ option.name | handleize }}]"]').value);
           {% endfor %}
           
-          var matchingVariant = productVariants__{{forloop.index}}.find(function(variant) {
+          let matchingVariant = productVariants__{{forloop.index}}.find(function(variant) {
             return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions.join('-');
           });
           
