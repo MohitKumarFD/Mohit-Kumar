@@ -608,6 +608,7 @@ body{
     display: block;
     height: 2px;
     background: red;
+    transition: 0.3s ease;
   }
   
   .mobile-trigger span:nth-child(2){
@@ -616,5 +617,18 @@ body{
   
   .mobile-trigger input{
       display: none;
+  }
+
+  .mobile-trigger input:checked + label span:nth-child(2) {
+      visibility: hidden;
+      opacity: 0;
+  }
+
+  .mobile-trigger input:checked + label span:first-child {
+    transform: rotate(45deg) translate(5px, 4px);
+  }
+  
+  .mobile-trigger input:checked + label span:nth-child(3) {
+      transform: rotate(135deg) translate(-3px, 4px);
   }
 }
