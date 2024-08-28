@@ -607,7 +607,7 @@ body{
     width: 20px;
     display: block;
     height: 2px;
-    background: red;
+    background: #000000;
     transition: 0.3s ease;
   }
   
@@ -625,10 +625,10 @@ body{
   }
 
   .mobile-trigger input:checked + label span:first-child {
-    transform: rotate(45deg) translate(5px, 4px);
+    transform: rotate(45deg) translate(4px, 5px);
   }
   
   .mobile-trigger input:checked + label span:nth-child(3) {
-      transform: rotate(135deg) translate(-3px, 4px);
+      transform: rotate(135deg) translate(-3px, 5px);
   }
 }
