@@ -95,7 +95,7 @@
           
           if (matchingVariant_{{main_loop_index}}) {
             console.log(matchingVariant_{{main_loop_index}})
-            document.querySelector('#form--{{ block.id }}__{{ main_loop_index }} #variant-id').value = matchingVariant.id;
+            document.querySelector('#form--{{ block.id }}__{{ main_loop_index }} #variant-id').value = matchingVariant_{{main_loop_index}}.id;
           }
         }
 
