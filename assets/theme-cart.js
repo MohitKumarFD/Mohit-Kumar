@@ -19,22 +19,6 @@ productBlocks.forEach((item)=>{
   })
 })
 
-function updateVariantId() {
-  var selectedOptions = [];
-  {% for option in product_block.options_with_values %}
-    selectedOptions.push(document.querySelector('select[name="options[{{ option.name | handleize }}]"]').value);
-  {% endfor %}
-  
-  var matchingVariant = productVariants.find(function(variant) {
-    return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions.join('-');
-  });
-  
-  if (matchingVariant) {
-    console.log(matchingVariant)
-    document.getElementById('variant-id').value = matchingVariant.id;
-  }
-}
-
 
 let addToCartForm = document.querySelectorAll("form.custom-cart-add");
   // console.log(addToCartForm);
@@ -42,7 +26,6 @@ let addToCartForm = document.querySelectorAll("form.custom-cart-add");
   let formData = new FormData(formItem);
   formItem.addEventListener('submit', (e)=>{
     e.preventDefault();
-    updateVariantId();
     fetch(window.Shopify.routes.root + 'cart/add.js', {
       method: 'POST',
       body: formData
