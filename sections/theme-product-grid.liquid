@@ -108,7 +108,7 @@
             
             const selectedOptions = [];
             {% for option in product.options_with_values %}
-              selectedOptions.push(document.querySelector('select[name="options[{{ option.name | handleize }}]"]').value);
+              selectedOptions.push(document.querySelector('.real-input[name="options[{{ option.name | handleize }}]"]').value);
             {% endfor %}
 
             console.log(productVariants{{loopid}})
