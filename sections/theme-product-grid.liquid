@@ -108,7 +108,7 @@
             
             const selectedOptions = [];
             {% for option in product_block.options_with_values %}
-              selectedOptions.push(document.querySelector('.real-input[name="options[{{ option.name | handleize }}]"]'):checked.value);
+              selectedOptions.push(document.querySelector('.real-input[name="options[{{ option.name | handleize }}]"]:checked').value);
             {% endfor %}
 
             // console.log(productVariants{{loopid}})
