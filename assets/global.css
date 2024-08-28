@@ -305,10 +305,15 @@ body{
     font-size: 18px;
     letter-spacing: -0.2px;
     display: block;
+    z-index: 1;
 }
 
 .select-group .fancy-input input + label:not(:first-child){
     border-left: 0.5px solid #000000;
+}
+
+.select-group .fancy-input input:checked + label{
+  color: #ffffff;
 }
 
 .select-group .fancy-input input.option {
