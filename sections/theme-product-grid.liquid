@@ -61,19 +61,37 @@
                       <input type="hidden" id="variant-id" name="id" value="{{ product_block.selected_or_first_available_variant.id }}" />
                       {% for option in product_block.options_with_values  %}
                         <div class="option-name">{{ option.name }}</div>
-                        <div class="product-input-wrap {% if option.values.size > 2 %} select{% else %} select-group{% endif %}">
-                          <div class="fancy-input">
-                              
-                            {% for value in option.values %}
-                              
-                                <label style="--swatch-color: {{ value }}" for="option-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}">{{ value }}
-                                  <input type="radio" name="options[{{ option.name | handleize }}]"  id="option-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}" value="{{ value | handleize | escape }}" class="option" />
-                                </label>
-                              
-                            {% endfor %}
-                                <div class="glider"></div>
+                        {% if option.values.size > 2 %}
+                          <div class="product-input-wrap select-group">
+                            <div class="fancy-input">
+                                
+                              {% for value in option.values %}
+                                
+                                  <label style="--swatch-color: {{ value }}" for="option-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}">{{ value }}
+                                    <input type="radio" name="options[{{ option.name | handleize }}]"  id="option-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}" value="{{ value | handleize | escape }}" class="option" />
+                                  </label>
+                                
+                              {% endfor %}
+                                  <div class="glider"></div>
+                            </div>
                           </div>
-                        </div>
+                        {% else %}
+                          <div class="product-input-wrap fancy-select-group">
+                            <div class="select" tabindex="1">
+                              <input class="selectopt" name="test" type="radio" id="opt1" checked>
+                              <label for="opt1" class="option">Oranges</label>
+                              <input class="selectopt" name="test" type="radio" id="opt2">
+                              <label for="opt2" class="option">Apples</label>
+                              <input class="selectopt" name="test" type="radio" id="opt3">
+                              <label for="opt3" class="option">Grapefruit</label>
+                              <input class="selectopt" name="test" type="radio" id="opt4">
+                              <label for="opt4" class="option">Bananas</label>
+                              <input class="selectopt" name="test" type="radio" id="opt5">
+                              <label for="opt5" class="option">Watermelon</label>
+                            </div>
+                          </div>
+                        {% endif %}
+                        
                       {% endfor %}
                       <div class="btn-wrap">
                         <button type="submit" class="btn btn-theme-dark btn-arrow">Add to cart {% render 'button-arrow' %}</button>
