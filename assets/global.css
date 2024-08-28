@@ -365,6 +365,10 @@ body{
   height: 40px;
 }
 
+.fancy-select-group .select:before{
+  display: none;
+}
+
 .fancy-select-group .option {
   padding:0 30px 0 10px;
   min-height:40px;
