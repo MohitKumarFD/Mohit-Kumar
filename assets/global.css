@@ -365,7 +365,8 @@ body{
   height: 40px;
 }
 
-.fancy-select-group .select:after{
+.fancy-select-group .select:after,
+.fancy-select-group .select:before{
   display: none;
 }
 
