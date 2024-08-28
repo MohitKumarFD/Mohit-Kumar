@@ -563,4 +563,36 @@ body{
   .header-wrap {
       flex-wrap: wrap;
   }
+
+  .mobile-menu-content{
+    max-height: 0px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    text-align: center;
+    padding: 25px 0px;
+  }
+  
+  .mobile-trigger:has(input:checked) ~ .mobile-menu-content{
+      max-height: 1000px;
+  }
+  
+  .main-header .page-width {
+      padding: 0px;
+      position: relative;
+  }
+  
+  .header-wrap {
+      box-shadow: 0px 2px 4px 0px #00000026;
+  }
+  
+  .mobile-trigger {
+      position: absolute;
+      z-index: 99;
+      top: 20px;
+      left: 18px;
+  }
+  
+  .mobile-header-text {
+      margin-bottom: 16px;
+  }
 }
