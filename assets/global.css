@@ -374,8 +374,8 @@ body{
   min-height:40px;
   display:flex;
   align-items:center;
-  background:#333;
-  border-top:#222 solid 1px;
+  background: #ffffff;
+  border-top: #222 solid 1px;
   position:absolute;
   top:0;
   width: 100%;
@@ -391,6 +391,7 @@ body{
 
 .fancy-select-group .option:hover {
   background:#000000;
+  color: #ffffff;
 }
 
 .fancy-select-group .select:focus .option {
