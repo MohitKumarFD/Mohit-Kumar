@@ -82,7 +82,7 @@
         <script>
           {% assign main_loop_index = forloop.index %}
           var productVariants_{{main_loop_index}} = {{ product_block.variants | json }};
-          function updateVariantId() {
+          function updateVariantId_{{ main_loop_index }}() {
             var selectedOptions_{{main_loop_index}} = [];
             
             {% for option in product_block.options_with_values %}
@@ -101,7 +101,7 @@
   
           document.querySelectorAll('#form--{{ block.id }}__{{ main_loop_index }} .product-input-wrap').forEach((input)=>{
             input.addEventListener('change',()=>{
-              updateVariantId();
+              updateVariantId_{{ main_loop_index }}();
             })
           })
         </script>
