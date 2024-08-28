@@ -81,29 +81,29 @@
 
         <script>
           {% assign main_loop_index = forloop.index %}
-        var productVariants_{{main_loop_index}} = {{ product_block.variants | json }};
-        function updateVariantId() {
-          var selectedOptions_{{main_loop_index}} = [];
-          
-          {% for option in product_block.options_with_values %}
-            selectedOptions_{{main_loop_index}}.push(document.querySelector("input[name='options[{{ option.name | handleize }}]']").value);
-          {% endfor %}
-          
-          var matchingVariant_{{main_loop_index}} = productVariants_{{main_loop_index}}.find(function(variant) {
-            return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions_{{main_loop_index}}.join('-');
-          });
-          
-          if (matchingVariant_{{main_loop_index}}) {
-            console.log(matchingVariant_{{main_loop_index}})
-            document.querySelector('#form--{{ block.id }}__{{ main_loop_index }} #variant-id').value = matchingVariant_{{main_loop_index}}.id;
+          var productVariants_{{main_loop_index}} = {{ product_block.variants | json }};
+          function updateVariantId() {
+            var selectedOptions_{{main_loop_index}} = [];
+            
+            {% for option in product_block.options_with_values %}
+              selectedOptions_{{main_loop_index}}.push(document.querySelector("input[name='options[{{ option.name | handleize }}]']").value);
+            {% endfor %}
+            
+            var matchingVariant_{{main_loop_index}} = productVariants_{{main_loop_index}}.find(function(variant) {
+              return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions_{{main_loop_index}}.join('-');
+            });
+            
+            if (matchingVariant_{{main_loop_index}}) {
+              console.log(matchingVariant_{{main_loop_index}})
+              document.querySelector('#form--{{ block.id }}__{{ main_loop_index }} #variant-id').value = matchingVariant_{{main_loop_index}}.id;
+            }
           }
-        }
-
-        document.querySelectorAll('#form--{{ block.id }}__{{ main_loop_index }} .product-input-wrap').forEach((input)=>{
-          input.addEventListener('change',()=>{
-            updateVariantId();
+  
+          document.querySelectorAll('#form--{{ block.id }}__{{ main_loop_index }} .product-input-wrap').forEach((input)=>{
+            input.addEventListener('change',()=>{
+              updateVariantId();
+            })
           })
-        })
         </script>
       {% endfor %}
     </div>
