@@ -335,7 +335,7 @@ body{
     position: relative;
 }
 
-.select-group .fancy-input label:has(input:checked) ~ .glider {
+.select-group .fancy-input label:nth-child(1):has(input:checked) ~ .glider {
     opacity: 1;
     visibility: visible;
     transform: translateX(calc(0 * 135px));
