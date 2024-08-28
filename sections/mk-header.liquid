@@ -1,28 +1,7 @@
 <div class="main-header shopify-{{ section.id }}-wrap">
   <div class="page-width">
+    
     <div class="header-wrap">
-      <div class="mobile-trigger">
-        <input type="checkbox" class="mobile-menu-checkbox" id="mobile-menu-checkbox" />
-        <label>
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
-      <div class="mobile-menu-content">
-        {% if section.settings.header_text != blank %}
-        <div class="mobile-header-text">
-          <span class="site-description">{{ section.settings.header_text }}</span>
-        </div>
-        {% endif %}
-  
-        {% if section.settings.button_text != blank %}
-        <div class="mobile-header-cta">
-          <a href="{{ section.settings.button_link }}" class="btn btn-theme btn-arrow">{{ section.settings.button_text }} {% render 'button-arrow' %}</a>
-        </div>
-        {% endif %}
-      </div>
-      
       <div class="logo-wrap">
         <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
           {%- if settings.logo != blank -%}
@@ -60,6 +39,29 @@
       {% endif %}
       
     </div>
+
+    <div class="mobile-trigger">
+      <input type="checkbox" class="mobile-menu-checkbox" id="mobile-menu-checkbox" />
+      <label>
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+    <div class="mobile-menu-content">
+      {% if section.settings.header_text != blank %}
+      <div class="mobile-header-text">
+        <span class="site-description">{{ section.settings.header_text }}</span>
+      </div>
+      {% endif %}
+
+      {% if section.settings.button_text != blank %}
+      <div class="mobile-header-cta">
+        <a href="{{ section.settings.button_link }}" class="btn btn-theme btn-arrow">{{ section.settings.button_text }} {% render 'button-arrow' %}</a>
+      </div>
+      {% endif %}
+    </div>
+    
   </div>
 </div>
 
