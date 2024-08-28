@@ -82,14 +82,14 @@
         <script>
         var productVariants_{{forloop.index}} = {{ product_block.variants | json }};
         function updateVariantId() {
-          var selectedOptions = [];
+          var selectedOptions_{{forloop.index}} = [];
           
           {% for option in product_block.options_with_values %}
-            selectedOptions.push(document.querySelector("input[name='options[{{ option.name | handleize }}]']").value);
+            selectedOptions_{{forloop.index}}.push(document.querySelector("input[name='options[{{ option.name | handleize }}]']").value);
           {% endfor %}
           
           var matchingVariant_{{forloop.index}} = productVariants_{{forloop.index}}.find(function(variant) {
-            return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions.join('-');
+            return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions_{{forloop.index}}.join('-');
           });
           
           if (matchingVariant_{{forloop.index}}) {
