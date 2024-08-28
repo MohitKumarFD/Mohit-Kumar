@@ -435,3 +435,7 @@ body{
   content: '';
   background:#ffffff;
 }
+
+.product-input-wrap.fancy-select-group {
+    border: 0.5px solid #000000;
+}
