@@ -80,25 +80,26 @@
         </div>
 
         <script>
-        var productVariants_{{forloop.index}} = {{ product_block.variants | json }};
+          {% assign main_loop_index = forloop.index %}
+        var productVariants_{{main_loop_index}} = {{ product_block.variants | json }};
         function updateVariantId() {
-          var selectedOptions_{{forloop.index}} = [];
+          var selectedOptions_{{main_loop_index}} = [];
           
           {% for option in product_block.options_with_values %}
-            selectedOptions_{{forloop.index}}.push(document.querySelector("input[name='options[{{ option.name | handleize }}]']").value);
+            selectedOptions_{{main_loop_index}}.push(document.querySelector("input[name='options[{{ option.name | handleize }}]']").value);
           {% endfor %}
           
-          var matchingVariant_{{forloop.index}} = productVariants_{{forloop.index}}.find(function(variant) {
-            return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions_{{forloop.index}}.join('-');
+          var matchingVariant_{{main_loop_index}} = productVariants_{{main_loop_index}}.find(function(variant) {
+            return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions_{{main_loop_index}}.join('-');
           });
           
-          if (matchingVariant_{{forloop.index}}) {
-            console.log(matchingVariant_{{forloop.index}})
-            document.querySelector('#form--{{ block.id }}__{{ forloop.index }} #variant-id').value = matchingVariant.id;
+          if (matchingVariant_{{main_loop_index}}) {
+            console.log(matchingVariant_{{main_loop_index}})
+            document.querySelector('#form--{{ block.id }}__{{ main_loop_index }} #variant-id').value = matchingVariant.id;
           }
         }
 
-        document.querySelectorAll('#form--{{ block.id }}__{{ forloop.index }} .product-input-wrap').forEach((input)=>{
+        document.querySelectorAll('#form--{{ block.id }}__{{ main_loop_index }} .product-input-wrap').forEach((input)=>{
           input.addEventListener('change',()=>{
             updateVariantId();
           })
