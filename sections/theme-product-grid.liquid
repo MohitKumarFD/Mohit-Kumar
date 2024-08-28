@@ -105,7 +105,7 @@
             var selectedOptions_{{main_loop_index}} = [];
             
             {% for option in product_block.options_with_values %}
-              selectedOptions_{{main_loop_index}}.push(document.querySelector("input[name='options[{{ option.name | handleize }}]']").value);
+              selectedOptions_{{main_loop_index}}.push(document.querySelector("#form--{{ block.id }}__{{ main_loop_index }} input[name='options[{{ option.name | handleize }}]']").value);
             {% endfor %}
             
             var matchingVariant_{{main_loop_index}} = productVariants_{{main_loop_index}}.find(function(variant) {
