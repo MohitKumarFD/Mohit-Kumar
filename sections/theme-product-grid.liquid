@@ -8,6 +8,7 @@
 
     <div class="product-grid-wrap">
       {% for block in section.blocks %}
+        {% assign loopid = forloop.index %}
         <div class="product-grid-item have-modal" style="--posX: {{ block.settings.posX }}%; --posY: {{ block.settings.posY }}%;">
           <div class="product-block">
             <div class="product-img-wrap">
@@ -68,7 +69,7 @@
                               {% for value in option.values %}
                                 
                                   <label style="--swatch-color: {{ value }}" for="option-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}">{{ value }}
-                                    <input type="radio" name="options[{{ option.name | handleize }}]"  id="option-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}" value="{{ value | handleize | escape }}" class="option" />
+                                    <input type="radio" onchange="updateVariantId{{loopid}}(e)" name="options[{{ option.name | handleize }}]"  id="option-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}" value="{{ value | handleize | escape }}" class="option" />
                                   </label>
                                 
                               {% endfor %}
@@ -79,7 +80,7 @@
                           <div class="product-input-wrap fancy-select-group">
                             <div class="select" tabindex="1">
                               {% for value in option.values %}
-                              <input class="selectopt" name="options[{{ option.name | handleize }}]" type="radio" id="select-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}" value="{{ value | handleize | escape }}" checked>
+                              <input class="selectopt" onchange="updateVariantId{{loopid}}(e)" name="options[{{ option.name | handleize }}]" type="radio" id="select-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}" value="{{ value | handleize | escape }}" checked>
                               <label for="select-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}" class="option">{{ value }}</label>
                               {% endfor %}
                             </div>
@@ -98,66 +99,28 @@
           </div>
         </div>
 
-        {% comment %}
+        
         <script>
-          {% assign main_loop_index = forloop.index %}
-          var productVariants_{{main_loop_index}} = {{ product_block.variants | json }};
-          function updateVariantId_{{ main_loop_index }}() {
-            var selectedOptions_{{main_loop_index}} = [];
-            
-            {% for option in product_block.options_with_values %}
-              selectedOptions_{{main_loop_index}}.push(document.querySelector("#form--{{ block.id }}__{{ main_loop_index }} input[name='options[{{ option.name | handleize }}]']").value);
+          var productVariants{{loopid}} = {{ product.variants | json }};
+          console.log(productVariants{{loopid}})
+          
+          function updateVariantId{{loopid}}() {
+            const selectedOptions = [];
+            {% for option in product.options_with_values %}
+              selectedOptions.push(document.querySelector('select[name="options[{{ option.name | handleize }}]"]').value);
             {% endfor %}
             
-            var matchingVariant_{{main_loop_index}} = productVariants_{{main_loop_index}}.find(function(variant) {
-              return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions_{{main_loop_index}}.join('-');
+            const matchingVariant = productVariants{{loopid}}.find(function(variant) {
+              return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions.join('-');
             });
             
-            if (matchingVariant_{{main_loop_index}}) {
-              console.log(matchingVariant_{{main_loop_index}})
-              document.querySelector('#form--{{ block.id }}__{{ main_loop_index }} #variant-id').value = matchingVariant_{{main_loop_index}}.id;
+            if (matchingVariant) {
+              console.log(matchingVariant)
+              document.getElementById('variant-id').value = matchingVariant.id;
             }
           }
-  
-          document.querySelectorAll('#form--{{ block.id }}__{{ main_loop_index }} .product-input-wrap').forEach((input)=>{
-            input.addEventListener('change',()=>{
-              updateVariantId_{{ main_loop_index }}();
-            })
-          })
         </script>
-        {% endcomment %}
-
-        <script>
-          {% assign main_loop_index = forloop.index %}
-  // Assuming each form has a unique index (main_loop_index)
-  var productVariantsForForm{{main_loop_index}} = {{ product_block.variants | json }};
-
-  function updateVariantId_{{ main_loop_index }}() {
-    var selectedOptions = [];
-    
-    {% for option in product_block.options_with_values %}
-      selectedOptions.push(document.querySelector("#form--{{ block.id }}__{{ main_loop_index }} input[name='options[{{ option.name | handleize }}]']").value);
-    {% endfor %}
-    
-    var matchingVariant = productVariantsForForm{{main_loop_index}}.find(function(variant) {
-      // Compare selected options directly with variant options
-      return variant.options.map(function(option) {
-        return option.toLowerCase().replace(/\s+/g, '-');
-      }).join('-') === selectedOptions.join('-');
-    });
-    
-    if (matchingVariant) {
-      console.log(matchingVariant);
-      document.querySelector('#form--{{ block.id }}__{{ main_loop_index }} #variant-id').value = matchingVariant.id;
-    }
-  }
-
-  document.querySelectorAll('#form--{{ block.id }}__{{ main_loop_index }} .product-input-wrap').forEach((input) => {
-    input.addEventListener('change', () => {
-      updateVariantId_{{ main_loop_index }}();
-    });
-  });
-</script>
+        
 
       {% endfor %}
     </div>
