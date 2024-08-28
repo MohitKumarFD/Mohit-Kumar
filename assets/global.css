@@ -595,11 +595,26 @@ body{
   .mobile-trigger {
       position: absolute;
       z-index: 99;
-      top: 20px;
+      top: 25px;
       left: 18px;
   }
   
   .mobile-header-text {
       margin-bottom: 16px;
+  }
+
+  .mobile-trigger span {
+    width: 20px;
+    display: block;
+    height: 2px;
+    background: red;
+  }
+  
+  .mobile-trigger span:nth-child(2){
+      margin: 4px 0;
+  }
+  
+  .mobile-trigger input{
+      display: none;
   }
 }
