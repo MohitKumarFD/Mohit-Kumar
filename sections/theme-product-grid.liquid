@@ -80,7 +80,7 @@
                             <div class="select" tabindex="1">
                               {% for value in option.values %}
                               <input class="selectopt" name="options[{{ option.name | handleize }}]" type="radio" id="select-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}" value="{{ value | handleize | escape }}" checked>
-                              <label for="select-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}" class="option">Oranges</label>
+                              <label for="select-{{ option.name }}-{{ forloop.index0 }}-{{ block.id }}" class="option">{{ value }}</label>
                               {% endfor %}
                             </div>
                           </div>
