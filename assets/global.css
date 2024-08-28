@@ -335,12 +335,14 @@ body{
     position: relative;
 }
 
-/* .select-group .fancy-input label:nth-child(1):has(input:checked) ~ .glider {
+.select-group .fancy-input label:nth-child(1):has(input:checked) ~ .glider {
     opacity: 1;
     visibility: visible;
-    transform: translateX(calc(0 * 135px));
-} */
+    transform: translateX(calc(0 * 100%));
+}
 
-.select-group .fancy-input label:has(input:checked) {
-    color: red;
+.select-group .fancy-input label:nth-child(1):has(input:checked) ~ .glider {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(calc(0 * 100%));
 }
