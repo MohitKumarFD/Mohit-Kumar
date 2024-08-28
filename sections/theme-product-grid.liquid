@@ -94,7 +94,7 @@
           
           if (matchingVariant) {
             console.log(matchingVariant)
-            document.getElementById('#form--{{ block.id }}__{{ forloop.index }} variant-id').value = matchingVariant.id;
+            document.querySelector('#form--{{ block.id }}__{{ forloop.index }} #variant-id').value = matchingVariant.id;
           }
         }
 
