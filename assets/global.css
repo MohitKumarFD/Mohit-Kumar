@@ -569,7 +569,14 @@ body{
     overflow: hidden;
     transition: 0.3s ease;
     text-align: center;
-    padding: 25px 0px;
+  }
+
+  .mobile-header-text{
+    padding-top: 25px;
+  }
+
+  .mobile-header-cta{
+    margin-bottom: 25px;
   }
   
   .mobile-trigger:has(input:checked) ~ .mobile-menu-content{
