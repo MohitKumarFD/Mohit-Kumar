@@ -341,8 +341,14 @@ body{
   transform: translateX(135px);
 }
 
-.select-group .fancy-input input:checked ~ .glider {
+.select-group .fancy-input label:has(input:checked) ~ .glider {
     opacity: 1;
     visibility: visible;
-    transform: translateX(calc(var(--mul) * 135px));
+    transform: translateX(calc(0 * 135px));
+}
+
+.select-group .fancy-input label:nth-child(2):has(input:checked) ~ .glider {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(calc(0 * 135px));
 }
