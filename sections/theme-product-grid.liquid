@@ -81,21 +81,6 @@
 
         <script>
         var productVariants = {{ product_block.variants | json }};
-        function updateVariantId() {
-          var selectedOptions = [];
-          {% for option in product_block.options_with_values %}
-            selectedOptions.push(document.querySelector('select[name="options[{{ option.name | handleize }}]"]').value);
-          {% endfor %}
-          
-          var matchingVariant = productVariants.find(function(variant) {
-            return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions.join('-');
-          });
-          
-          if (matchingVariant) {
-            // console.log(matchingVariant)
-            document.getElementById('variant-id').value = matchingVariant.id;
-          }
-        }
         </script>
       {% endfor %}
     </div>
