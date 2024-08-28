@@ -62,10 +62,14 @@
                       {% for option in product_block.options_with_values  %}
                         <div class="option-name">{{ option.name }}</div>
                         <div class="product-input-wrap {% if option.values.size > 2 %} select{% else %} select-group{% endif %}">
-                        {% for value in option.values %}
-                          <input type="radio" name="options[{{ option.name | handleize }}]" id="option-{{ option.name }}-{{ forloop.index }}" value="{{ value | handleize | escape }}" class="option" />
-                          <label for="option-{{ option.name }}-{{ forloop.index }}">{{ value }}</label>
-                        {% endfor %}
+                          <div class="fancy-input">
+                            {% for value in option.values %}
+                              <div class="input-value" style="--swatch-color: {{ value }}">
+                                <input type="radio" name="options[{{ option.name | handleize }}]" id="option-{{ option.name }}-{{ forloop.index }}" value="{{ value | handleize | escape }}" class="option" />
+                                <label for="option-{{ option.name }}-{{ forloop.index }}">{{ value }}</label>
+                              </div>
+                            {% endfor %}
+                          </div>
                         </div>
                       {% endfor %}
                       <div class="btn-wrap">
