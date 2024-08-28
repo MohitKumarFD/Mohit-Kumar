@@ -66,8 +66,8 @@
                               <div class="glider"></div>
                             {% for value in option.values %}
                               
-                                <input type="radio" name="options[{{ option.name | handleize }}]" id="option-{{ option.name }}-{{ forloop.index }}-{{ block.id }}" value="{{ value | handleize | escape }}" class="option" />
-                                <label style="--swatch-color: {{ value }}" for="option-{{ option.name }}-{{ forloop.index }}-{{ block.id }}">{{ value }}</label>
+                                <input type="radio" name="options[{{ option.name | handleize }}]" id="option-{{ option.name }}--{{ block.id }}" value="{{ value | handleize | escape }}" class="option" />
+                                <label style="--swatch-color: {{ value }}" for="option-{{ option.name }}--{{ block.id }}">{{ value }}</label>
                               
                             {% endfor %}
                                 
