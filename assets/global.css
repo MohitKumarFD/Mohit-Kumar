@@ -415,17 +415,18 @@ body{
 }
 
 .fancy-select-group input:checked + label:after {
-  content:'';
-  width: 0; 
-	height: 0; 
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
-	border-top: 5px solid #000000;
-  position:absolute;
-  right:10px;
-  top:calc(50% - 2.5px);
-  pointer-events:none;
-  z-index:3;
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  border-top: 2px solid #000000;
+  border-right: 2px solid #000000;
+  position: absolute;
+  right: 20px;
+  top: 13px;
+  transform: rotate(135deg);
+  pointer-events: none;
+  z-index: 3;
 }
 
 .fancy-select-group input:checked + label:before {
