@@ -359,9 +359,9 @@ body{
 .fancy-select-group .select {
   display:flex;
   flex-direction: column;
-  position:relative;
-  width:250px;
-  height:40px;
+  position: relative;
+  width: 100%;
+  height: 40px;
 }
 
 .fancy-select-group .option {
