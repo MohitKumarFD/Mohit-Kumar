@@ -88,12 +88,12 @@
             selectedOptions.push(document.querySelector("input[name='options[{{ option.name | handleize }}]']").value);
           {% endfor %}
           
-          var matchingVariant = productVariants_{{forloop.index}}.find(function(variant) {
+          var matchingVariant_{{forloop.index}} = productVariants_{{forloop.index}}.find(function(variant) {
             return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions.join('-');
           });
           
-          if (matchingVariant) {
-            console.log(matchingVariant)
+          if (matchingVariant_{{forloop.index}}) {
+            console.log(matchingVariant_{{forloop.index}})
             document.querySelector('#form--{{ block.id }}__{{ forloop.index }} #variant-id').value = matchingVariant.id;
           }
         }
