@@ -105,11 +105,14 @@
           
           
           function updateVariantId{{loopid}}() {
-            console.log(productVariants{{loopid}})
+            
             const selectedOptions = [];
             {% for option in product.options_with_values %}
               selectedOptions.push(document.querySelector('select[name="options[{{ option.name | handleize }}]"]').value);
             {% endfor %}
+
+            console.log(productVariants{{loopid}})
+            console.log(selectedOptions)
             
             const matchingVariant = productVariants{{loopid}}.find(function(variant) {
               return variant.options.map(function(option) { return option.toLowerCase().replace(/\s+/g, '-'); }).join('-') === selectedOptions.join('-');
