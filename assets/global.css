@@ -335,6 +335,13 @@ body{
     position: relative;
 }
 
+.select-group .fancy-input label ~ .glider {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(0px);
+    transition: 0.2s ease;
+}
+
 .select-group .fancy-input label:nth-child(1):has(input:checked) ~ .glider {
     opacity: 1;
     visibility: visible;
