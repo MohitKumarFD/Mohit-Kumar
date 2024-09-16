@@ -132,13 +132,12 @@
   </div>
 </div>
 
-{% assign collection_handle = 'frontpage' %}
+<script src={{ 'theme-cart.js' | asset_url }} defer></script>
 
+{% assign collection_handle = 'frontpage' %}
 {% for product in collection[collection_handle].products %}
   <div>{{ product.title }}</div>
 {% endfor %}
-
-<script src={{ 'theme-cart.js' | asset_url }} defer></script>
 
 {% schema %}
   {
