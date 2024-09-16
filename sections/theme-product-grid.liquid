@@ -135,8 +135,8 @@
 <script src={{ 'theme-cart.js' | asset_url }} defer></script>
 
 {% assign collection_handle = 'frontpage' %}
-{% for product in collection[collection_handle].products %}
-  <div>{{ product.title }}</div>
+{% for cstm_product in collection[collection_handle].products %}
+  <div>{{ cstm_product.title }}</div>
 {% endfor %}
 
 {% schema %}
